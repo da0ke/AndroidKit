@@ -82,7 +82,7 @@ public class AndroidUtils {
      */
     public static void showMsg(String msg) {
         LayoutInflater inflate = (LayoutInflater) getApp().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View toastView = inflate.inflate(R.layout.cn_da0ke_jandroidtool_toast,null);
+        View toastView = inflate.inflate(R.layout.androidkit_toast,null);
         TextView tv = toastView.findViewById(R.id.TextViewInfo);
         tv.setText(msg);
         Toast toast = new Toast(getApp());
