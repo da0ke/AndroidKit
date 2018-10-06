@@ -13,6 +13,6 @@ allprojects {
 Step 2. Add the dependency
 ```
 dependencies {
-	implementation 'com.github.da0ke:AndroidKit:1.0.1'
+	implementation 'com.github.da0ke:AndroidKit:{version}'
 }
 ```
