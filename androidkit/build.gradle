@@ -9,7 +9,6 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName '1.0.9'
-
     }
     buildTypes {
         release {
@@ -17,15 +16,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    productFlavors {
+
+
+
+    lintOptions {
+        disable 'GoogleAppIndexingWarning'
     }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.core:core:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    api 'com.github.da0ke:JavaKit:0.0.3'
+
+    implementation 'com.github.da0ke:JavaKit:0.0.3'
     // 一款用于在Android设备上获取照片（拍照或从相册、文件中选择）、裁剪图片、压缩图片的开源工具库
     implementation('org.devio.takephoto:takephoto_library:4.1.0') {
         exclude group: 'com.android.support'
@@ -33,12 +38,17 @@ dependencies {
     // 一个强大的RecyclerAdapter框架
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.43-alpha1'
     // 一个快速高效的Android图片加载库
-    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation ('com.github.bumptech.glide:glide:4.8.0') {
+        exclude group: 'com.android.support'
+    }
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     // 对 PopupWindow 的封装
-    implementation 'com.github.zyyoona7:EasyPopup:1.1.2'
-    // 百度地图
+    implementation ('com.github.zyyoona7:EasyPopup:1.1.2') {
+        exclude group: 'com.android.support'
+    }
+
+//    // 百度地图
     implementation files('libs/BaiduLBS_Android.jar')
-    //高德地图：2D地图
+//    //高德地图：2D地图
     implementation 'com.amap.api:map2d:5.2.0'
 }

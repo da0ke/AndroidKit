@@ -30,7 +30,7 @@ public class TakePhotoActivity extends org.devio.takephoto.app.TakePhotoActivity
 
     public static final File PHOTO_DIR = new File( //图片保存路径
             Environment.getExternalStorageDirectory()+File.separator
-                    + Environment.DIRECTORY_DCIM + File.separator + "jinxiu");
+                    + Environment.DIRECTORY_DCIM + File.separator + "da0ke");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
