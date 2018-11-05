@@ -44,11 +44,6 @@
             android:process=":remote" />
         <activity android:name=".map.MapActivity"/>
 
-        <activity
-            android:name=".takephoto.TakePhotoActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden|screenSize"/>
-
     </application>
 
 </manifest>
