@@ -5,7 +5,7 @@ android {
         keystore {
             keyAlias 'key0'
             keyPassword '123456'
-            storeFile file('E:/工具/android/keystore/AndroidKit.jks')
+            storeFile file('E:/tools/keystore/AndroidKit.jks')
             storePassword '123456'
         }
     }
