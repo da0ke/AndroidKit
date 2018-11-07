@@ -2,12 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
-        keystore {
-            keyAlias 'key0'
-            keyPassword '123456'
-            //storeFile file('E:/工具/android/keystore/AndroidKit.jks')
-            storePassword '123456'
-        }
     }
     compileSdkVersion 28
     defaultConfig {
@@ -22,18 +16,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.keystore
         }
         debug {
-            signingConfig signingConfigs.keystore
         }
     }
-//    productFlavors {
-//        debug {
-//            manifestPlaceholders = [baidu_map_app_key:"EHXSAPqzG5HuQxuIS3fvbf5S"]
-//            dimension "dev"
-//        }
-//    }
+
 }
 
 dependencies {
