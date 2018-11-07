@@ -1,1 +1,1 @@
-include ':app', ':androidkit'
+include ':app', ':androidkit', ':takephoto'

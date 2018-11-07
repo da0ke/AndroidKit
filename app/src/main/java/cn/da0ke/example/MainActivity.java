@@ -3,9 +3,10 @@ package cn.da0ke.example;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.da0ke.androidkit.map.MapActivity;
+import cn.da0ke.androidkit.takephoto.TakePhotoUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +21,13 @@ public class MainActivity extends AppCompatActivity {
                 clickMap();
             }
         });
+
+        findViewById(R.id.takephoto).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickTakePhoto();
+            }
+        });
     }
 
     private void clickMap() {
@@ -31,5 +39,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void clickTakePhoto() {
+        Intent intent = new Intent(this, TakePhotoActivity.class);
+        startActivity(intent);
+    }
 
 }

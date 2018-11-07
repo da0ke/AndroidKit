@@ -8,7 +8,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
-        versionName '1.1.4'
+        versionName '1.1.5'
     }
     buildTypes {
         release {
@@ -40,8 +40,16 @@ dependencies {
     implementation('com.github.zyyoona7:EasyPopup:1.1.2') {
         exclude group: 'com.android.support'
     }
-    //    // 百度地图
+    // 百度地图
     implementation files('libs/BaiduLBS_Android.jar')
-    //    //高德地图：2D地图
+    //高德地图：2D地图
     implementation 'com.amap.api:map2d:5.2.0'
+    // Image Cropping Library for Android, optimized for Camera / Gallery.
+    //    api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+    //    implementation 'id.zelory:compressor:2.1.0'
+    //    api ('org.devio.takephoto:takephoto_library:4.1.0') {
+    //        exclude group: 'com.android.support'
+    //        exclude group: 'com.github.bumptech.glide'
+    //    }
+    implementation project(':takephoto')
 }
