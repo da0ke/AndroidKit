@@ -55,7 +55,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".takephoto.MyTakePhotoActivity"
+        <activity android:name="cn.da0ke.androidkit.takephoto.MyTakePhotoActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
