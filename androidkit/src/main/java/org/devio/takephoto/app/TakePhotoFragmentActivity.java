@@ -1,18 +1,21 @@
 package org.devio.takephoto.app;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import org.devio.takephoto.permission.PermissionManager;
-import org.devio.takephoto.permission.TakePhotoInvocationHandler;
+
 import org.devio.takephoto.model.InvokeParam;
 import org.devio.takephoto.model.TContextWrap;
 import org.devio.takephoto.model.TResult;
 import org.devio.takephoto.permission.InvokeListener;
+import org.devio.takephoto.permission.PermissionManager;
+import org.devio.takephoto.permission.TakePhotoInvocationHandler;
+
+import androidx.fragment.app.FragmentActivity;
+import cn.da0ke.androidkit.R;
 
 /**
- * 继承这个类来让Fragment获取拍照的能力<br>
+ * 继承这个类来让Activity获取拍照的能力<br>
  * Author: crazycodeboy
  * Date: 2016/9/21 0007 20:10
  * Version:3.0.0
@@ -20,25 +23,25 @@ import org.devio.takephoto.permission.InvokeListener;
  * GitHub:https://github.com/crazycodeboy
  * Email:crazycodeboy@gmail.com
  */
-public class TakePhotoFragment extends Fragment implements TakePhoto.TakeResultListener, InvokeListener {
-    private static final String TAG = TakePhotoFragment.class.getName();
-    private InvokeParam invokeParam;
+public class TakePhotoFragmentActivity extends FragmentActivity implements TakePhoto.TakeResultListener, InvokeListener {
+    private static final String TAG = TakePhotoFragmentActivity.class.getName();
     private TakePhoto takePhoto;
+    private InvokeParam invokeParam;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         getTakePhoto().onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(Bundle outState) {
         getTakePhoto().onSaveInstanceState(outState);
         super.onSaveInstanceState(outState);
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         getTakePhoto().onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -47,7 +50,7 @@ public class TakePhotoFragment extends Fragment implements TakePhoto.TakeResultL
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         PermissionManager.TPermissionType type = PermissionManager.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        PermissionManager.handlePermissionsResult(getActivity(), type, invokeParam, this);
+        PermissionManager.handlePermissionsResult(this, type, invokeParam, this);
     }
 
     /**
@@ -74,7 +77,7 @@ public class TakePhotoFragment extends Fragment implements TakePhoto.TakeResultL
 
     @Override
     public void takeCancel() {
-        Log.i(TAG, getResources().getString(org.devio.takephoto.R.string.msg_operation_canceled));
+        Log.i(TAG, getResources().getString(R.string.msg_operation_canceled));
     }
 
     @Override

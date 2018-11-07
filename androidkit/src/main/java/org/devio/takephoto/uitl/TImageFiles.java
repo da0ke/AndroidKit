@@ -21,6 +21,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
 
+import cn.da0ke.androidkit.R;
+
 /**
  * ImageFiles工具类
  *
@@ -124,7 +126,7 @@ public class TImageFiles {
         boolean isPicture =
             TextUtils.isEmpty(minType) ? false : ".jpg|.gif|.png|.bmp|.jpeg|.webp|".contains(minType.toLowerCase()) ? true : false;
         if (!isPicture) {
-            Toast.makeText(context, context.getResources().getText(org.devio.takephoto.R.string.tip_type_not_image), Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, context.getResources().getText(R.string.tip_type_not_image), Toast.LENGTH_SHORT).show();
         }
         return isPicture;
     }

@@ -3,10 +3,6 @@ package org.devio.takephoto.permission;
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
-
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import android.text.TextUtils;
 import android.widget.Toast;
 
@@ -17,6 +13,11 @@ import org.devio.takephoto.uitl.TConstant;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import cn.da0ke.androidkit.R;
 
 /**
  * Created by penn on 16/9/22.
@@ -138,20 +139,20 @@ public class PermissionManager {
         String tip = null;
         switch (type) {
             case DENIED:
-                listener.takeFail(null, tip = activity.getResources().getString(org.devio.takephoto.R.string.tip_permission_camera_storage));
+                listener.takeFail(null, tip = activity.getResources().getString(R.string.tip_permission_camera_storage));
                 break;
             case ONLY_CAMERA_DENIED:
-                listener.takeFail(null, tip = activity.getResources().getString(org.devio.takephoto.R.string.tip_permission_camera));
+                listener.takeFail(null, tip = activity.getResources().getString(R.string.tip_permission_camera));
                 break;
             case ONLY_STORAGE_DENIED:
-                listener.takeFail(null, tip = activity.getResources().getString(org.devio.takephoto.R.string.tip_permission_storage));
+                listener.takeFail(null, tip = activity.getResources().getString(R.string.tip_permission_storage));
                 break;
             case GRANTED:
                 try {
                     invokeParam.getMethod().invoke(invokeParam.getProxy(), invokeParam.getArgs());
                 } catch (Exception e) {
                     e.printStackTrace();
-                    listener.takeFail(null, tip = activity.getResources().getString(org.devio.takephoto.R.string.tip_permission_camera_storage));
+                    listener.takeFail(null, tip = activity.getResources().getString(R.string.tip_permission_camera_storage));
                 }
                 break;
             default:

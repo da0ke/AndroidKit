@@ -7,24 +7,26 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
-import androidx.core.content.FileProvider;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.darsh.multipleimageselect.models.Image;
+import com.soundcloud.android.crop.Crop;
+
 import org.devio.takephoto.model.CropOptions;
+import org.devio.takephoto.model.TContextWrap;
 import org.devio.takephoto.model.TException;
 import org.devio.takephoto.model.TExceptionType;
 import org.devio.takephoto.model.TImage;
 import org.devio.takephoto.model.TIntentWap;
-import org.devio.takephoto.R;
-import org.devio.takephoto.model.TContextWrap;
-import com.soundcloud.android.crop.Crop;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.core.content.FileProvider;
+import cn.da0ke.androidkit.R;
 
 /**
  * 工具类

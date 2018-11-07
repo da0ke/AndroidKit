@@ -1,17 +1,18 @@
 package org.devio.takephoto.app;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import org.devio.takephoto.permission.PermissionManager;
 import org.devio.takephoto.model.InvokeParam;
 import org.devio.takephoto.model.TContextWrap;
 import org.devio.takephoto.model.TResult;
 import org.devio.takephoto.permission.InvokeListener;
+import org.devio.takephoto.permission.PermissionManager;
 import org.devio.takephoto.permission.TakePhotoInvocationHandler;
 
-import androidx.fragment.app.FragmentActivity;
+import cn.da0ke.androidkit.R;
 
 /**
  * 继承这个类来让Activity获取拍照的能力<br>
@@ -22,8 +23,8 @@ import androidx.fragment.app.FragmentActivity;
  * GitHub:https://github.com/crazycodeboy
  * Email:crazycodeboy@gmail.com
  */
-public class TakePhotoFragmentActivity extends FragmentActivity implements TakePhoto.TakeResultListener, InvokeListener {
-    private static final String TAG = TakePhotoFragmentActivity.class.getName();
+public class TakePhotoActivity extends Activity implements TakePhoto.TakeResultListener, InvokeListener {
+    private static final String TAG = TakePhotoActivity.class.getName();
     private TakePhoto takePhoto;
     private InvokeParam invokeParam;
 
@@ -76,7 +77,7 @@ public class TakePhotoFragmentActivity extends FragmentActivity implements TakeP
 
     @Override
     public void takeCancel() {
-        Log.i(TAG, getResources().getString(org.devio.takephoto.R.string.msg_operation_canceled));
+        Log.i(TAG, getResources().getString(R.string.msg_operation_canceled));
     }
 
     @Override

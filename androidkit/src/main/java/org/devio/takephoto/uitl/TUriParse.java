@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
-import androidx.core.content.FileProvider;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -19,6 +18,8 @@ import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
+import androidx.core.content.FileProvider;
 
 
 /**
