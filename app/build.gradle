@@ -5,7 +5,7 @@ android {
         keystore {
             keyAlias 'key0'
             keyPassword '123456'
-            storeFile file('E:/tools/keystore/AndroidKit.jks')
+            //storeFile file('E:/工具/android/keystore/AndroidKit.jks')
             storePassword '123456'
         }
     }
@@ -38,7 +38,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-//    implementation 'androidx.core:core:1.0.0'
+    //    implementation 'androidx.core:core:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation project(':androidkit')
