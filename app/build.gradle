@@ -36,6 +36,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.1'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
-//    implementation 'com.github.da0ke:AndroidKit:1.1.7.4'
-    api project(':androidkit')
+    implementation 'com.github.da0ke:AndroidKit:1.1.7.4'
+//    api project(':androidkit')
 }
