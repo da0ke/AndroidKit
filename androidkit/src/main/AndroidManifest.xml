@@ -34,16 +34,4 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
 
-    <application>
-        <meta-data
-            android:name="com.baidu.lbsapi.API_KEY"
-            android:value="${baidu_map_app_key}" />
-        <service
-            android:name="com.baidu.location.f"
-            android:enabled="true"
-            android:process=":remote" />
-        <activity android:name=".map.MapActivity"/>
-
-    </application>
-
 </manifest>

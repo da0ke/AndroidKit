@@ -8,7 +8,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
-        versionName '1.1.8.3'
+        versionName '1.1.8.4'
     }
     buildTypes {
         release {
@@ -22,18 +22,11 @@ android {
     productFlavors {
     }
 
-    sourceSets {
-        main {
-            assets.srcDirs = ['./src/main/assets']
-        }
-    }
 }
 
 
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.core:core:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.0.1'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.github.da0ke:JavaKit:0.0.3'
@@ -48,8 +41,4 @@ dependencies {
     implementation('com.github.zyyoona7:EasyPopup:1.1.2') {
         exclude group: 'com.android.support'
     }
-    // 百度地图
-    implementation files('libs/BaiduLBS_Android.jar')
-    //高德地图：2D地图
-    implementation 'com.amap.api:map2d:5.2.0'
 }
