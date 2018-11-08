@@ -3,7 +3,6 @@ package cn.da0ke.example;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.da0ke.androidkit.map.MapActivity;
 
