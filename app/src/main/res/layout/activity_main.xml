@@ -19,17 +19,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <Button
-                android:id="@+id/map"
+                android:id="@+id/dialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="地图"/>
+                android:text="dialog"/>
 
-            <Button
-                android:id="@+id/takephoto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="拍照"/>
         </LinearLayout>
     </ScrollView>
 
