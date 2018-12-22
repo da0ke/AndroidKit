@@ -3,13 +3,10 @@ package cn.da0ke.androidkit.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import cn.da0ke.androidkit.R;
 
 /**
@@ -17,6 +14,7 @@ import cn.da0ke.androidkit.R;
  */
 public class ConfirmDialog extends Dialog {
 
+    private ConfirmDialogStyle style;
     private Button _positive;
     private Button _negative;
     private TextView _title;
@@ -34,19 +32,15 @@ public class ConfirmDialog extends Dialog {
         super(context);
     }
 
-    public ConfirmDialog(@NonNull Context context, int themeResId) {
-        super(context, themeResId);
-    }
-
-    protected ConfirmDialog(@NonNull Context context, boolean cancelable, @Nullable OnCancelListener cancelListener) {
-        super(context, cancelable, cancelListener);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.androidkit_dialog_confirm);
+        if(style == ConfirmDialogStyle.Style1) {
+            setContentView(R.layout.androidkit_dialog_confirm_style1);
+        } else {
+            setContentView(R.layout.androidkit_dialog_confirm_style2);
+        }
 
         // 点空白处消失
         setCanceledOnTouchOutside(true);
@@ -108,6 +102,10 @@ public class ConfirmDialog extends Dialog {
         this.title = title;
     }
 
+    public void setStyle(ConfirmDialogStyle style) {
+        this.style = style;
+    }
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -131,6 +129,7 @@ public class ConfirmDialog extends Dialog {
     public static class Builder {
 
         private Context context;
+        private ConfirmDialogStyle style;
         private String title;
         private String message;
         private String positive;
@@ -140,6 +139,12 @@ public class ConfirmDialog extends Dialog {
 
         public Builder(@NonNull Context context) {
             this.context = context;
+            this.style = ConfirmDialogStyle.Style1;
+        }
+
+        public Builder(@NonNull Context context, ConfirmDialogStyle style) {
+            this.context = context;
+            this.style = style;
         }
 
         public Builder title(String title) {
@@ -175,6 +180,7 @@ public class ConfirmDialog extends Dialog {
         private ConfirmDialog create() {
             final ConfirmDialog dialog = new ConfirmDialog(context);
 
+            dialog.setStyle(style);
             dialog.setTitle(title);
             dialog.setMessage(message);
             dialog.setPositive(positive);
