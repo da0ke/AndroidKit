@@ -19,10 +19,22 @@ public class MainActivity extends AppCompatActivity {
                 clickDialog();
             }
         });
+
+        findViewById(R.id.takephoto).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickTakephoto();
+            }
+        });
     }
 
     private void clickDialog() {
         Intent intent = new Intent(this, DialogActivity.class);
+        startActivity(intent);
+    }
+
+    private void clickTakephoto() {
+        Intent intent = new Intent(this, TakePhotoActivity.class);
         startActivity(intent);
     }
 

@@ -50,10 +50,5 @@
 -keep class mapsdkvi.com.** {*;}
 -dontwarn com.baidu.**
 
-# TakePhoto
--keep class org.devio.takephoto.** { *; }
--dontwarn org.devio.takephoto.**
--keep class com.darsh.multipleimageselect.** { *; }
--dontwarn com.darsh.multipleimageselect.**
--keep class com.soundcloud.android.crop.** { *; }
--dontwarn com.soundcloud.android.crop.**
+# https://github.com/ArthurHub/Android-Image-Cropper
+-keep class android.support.v7.widget.** { *; }
