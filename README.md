@@ -1,6 +1,8 @@
 # AndroidKit
+[![](https://jitpack.io/v/da0ke/AndroidKit.svg)](https://jitpack.io/#da0ke/AndroidKit)
+封装部分常用工具类
 
-## 安装
+## 集成方式
 Step 1. Add it in your root build.gradle at the end of repositories:
 ```
 allprojects {
@@ -12,13 +14,14 @@ allprojects {
 ```
 
 Step 2. Add the dependency
+[![](https://jitpack.io/v/da0ke/AndroidKit.svg)](https://jitpack.io/#da0ke/AndroidKit)
 ```
 dependencies {
 	implementation 'com.github.da0ke:AndroidKit:{version}'
 }
 ```
 
-## 使用
+## 使用方法
 ### ConfirmDialog
 ```
 new ConfirmDialog.Builder(this)
@@ -48,10 +51,3 @@ new ConfirmDialog.Builder(this, ConfirmDialogStyle.Style2)
 ```
  ![ConfirmDialog.style2](https://raw.githubusercontent.com/da0ke/image/master/2.jpg)
 
-## 更新说明
-### v1.2.1
-- Add ConfirmDialog's new style;
-
-### v1.2.0
-- Upgrade appcompat to 1.0.2;
-- Add ConfirmDialog;
