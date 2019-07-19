@@ -9,7 +9,7 @@ android {
             storePassword '123456'
         }
     }
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "cn.da0ke.example"
         minSdkVersion 16
@@ -28,6 +28,10 @@ android {
         }
     }
     productFlavors {
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
     }
 }
 

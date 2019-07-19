@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import cn.da0ke.androidkit.utils.AndroidUtils;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -34,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void clickTakephoto() {
-        Intent intent = new Intent(this, TakePhotoActivity.class);
-        startActivity(intent);
+        AndroidUtils.showMsg("开发中");
     }
 
 
