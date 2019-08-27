@@ -17,7 +17,7 @@ Step 2. Add the dependency
 [![](https://jitpack.io/v/da0ke/AndroidKit.svg)](https://jitpack.io/#da0ke/AndroidKit)
 ```
 dependencies {
-	implementation 'com.github.da0ke:AndroidKit:{version}'
+	api 'com.github.da0ke:AndroidKit:{version}'
 }
 ```
 
