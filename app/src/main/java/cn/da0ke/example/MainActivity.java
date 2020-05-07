@@ -6,7 +6,6 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import cn.da0ke.androidkit.utils.AndroidUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,12 +21,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.takephoto).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickTakephoto();
-            }
-        });
+        findViewById(R.id.toast).setOnClickListener(v -> clickToast());
     }
 
     private void clickDialog() {
@@ -35,9 +29,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void clickTakephoto() {
-        AndroidUtils.showMsg("开发中");
+    private void clickToast() {
+        startActivity(new Intent(this, ToastActivity.class));
     }
-
 
 }

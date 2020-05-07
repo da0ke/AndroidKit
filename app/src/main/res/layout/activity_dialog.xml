@@ -29,6 +29,12 @@
                 android:layout_height="wrap_content"
                 android:text="style2"/>
 
+            <Button
+                android:id="@+id/loading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="loading"/>
+
         </LinearLayout>
     </ScrollView>
 

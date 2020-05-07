@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.net.Uri;
 import android.net.wifi.WifiInfo;
@@ -81,14 +82,9 @@ public class AndroidUtils {
      * 显示吐司
      */
     public static void showMsg(String msg) {
-        LayoutInflater inflate = (LayoutInflater) getApp().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View toastView = inflate.inflate(R.layout.androidkit_toast,null);
-        TextView tv = toastView.findViewById(R.id.TextViewInfo);
-        tv.setText(msg);
-        Toast toast = new Toast(getApp());
-        toast.setView(toastView);
-        toast.show();
+        ToastUtils.msg(msg, Color.parseColor("#000000"));
     }
+
 
     /**
      * dp 转 px

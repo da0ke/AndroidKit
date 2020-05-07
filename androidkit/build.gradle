@@ -37,4 +37,7 @@ dependencies {
 //        exclude group: 'com.android.support'
 //    }
 
+    // https://github.com/xiandanin/LoadingBar
+    implementation 'com.dyhdyh.loadingbar2:loadingbar:2.0.1'
+
 }

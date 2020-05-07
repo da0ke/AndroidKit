@@ -24,11 +24,10 @@
                 android:layout_height="wrap_content"
                 android:text="dialog"/>
             <Button
-                android:id="@+id/takephoto"
+                android:id="@+id/toast"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="takephoto"/>
-
+                android:text="toast"/>
         </LinearLayout>
     </ScrollView>
 
