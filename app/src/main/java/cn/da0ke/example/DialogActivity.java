@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import cn.da0ke.androidkit.dialog.ConfirmDialog;
 import cn.da0ke.androidkit.dialog.ConfirmDialogStyle;
 import cn.da0ke.androidkit.utils.AndroidUtils;
-import cn.da0ke.androidkit.utils.DialogUtils;
 
 /**
  * Created by da0ke on 2018/12/22
@@ -24,7 +23,6 @@ public class DialogActivity extends AppCompatActivity {
 
         findViewById(R.id.style1).setOnClickListener(v -> clickStyle1());
         findViewById(R.id.style2).setOnClickListener(v -> clickStyle2());
-        findViewById(R.id.loading).setOnClickListener(v -> showLoading());
     }
 
     private void clickStyle1() {
@@ -54,13 +52,6 @@ public class DialogActivity extends AppCompatActivity {
                 }).show();
     }
 
-    private void showLoading() {
-        DialogUtils.showLoading(this);
 
-        new Handler().postDelayed(() -> {
-            Log.d("da0ke", "3秒后隐藏Loading");
-            DialogUtils.hideLoading(this);
-        }, 3000);
-    }
 
 }
